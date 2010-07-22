@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Dist::Zilla::Plugin::Catalyst::Helper;
 BEGIN {
-  $Dist::Zilla::Plugin::Catalyst::Helper::VERSION = '0.02';
+  $Dist::Zilla::Plugin::Catalyst::Helper::VERSION = '0.03';
 }
 use Moose;
 use Dist::Zilla::File::InMemory;
@@ -38,6 +38,8 @@ sub mk_file {
 			content => $output,
 		});
 
+	$file->mode( oct(755) ) if $file->name =~ /script/;
+
 	$self->_zilla_add_file($file);
 }
 __PACKAGE__->meta->make_immutable;
@@ -55,7 +57,7 @@ Dist::Zilla::Plugin::Catalyst::Helper - a subclass of Catalyst::Helper
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 DESCRIPTION
 
