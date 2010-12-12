@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Dist::Zilla::Plugin::Catalyst::New;
 BEGIN {
-  $Dist::Zilla::Plugin::Catalyst::New::VERSION = '0.06';
+	our $VERSION = 0.07;# VERSION
 }
 use Moose;
 use Dist::Zilla::Plugin::Catalyst::Helper;
@@ -14,7 +14,7 @@ sub make_module {
 	my ( $self ) = @_;
 
 	if ( $Catalyst::Helper::VERSION <= 1.28 ) {
-		warn "[Catalyst::New] getting authors from ENV variable AUTHOR not dzil\n";
+		$self->log('getting authors from ENV variable AUTHOR not dzil');
 	}
 
 	# format $name to what C::Helper wants
@@ -49,7 +49,7 @@ Dist::Zilla::Plugin::Catalyst::New - create a new catalyst project with dzil new
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
@@ -124,7 +124,7 @@ This software is Copyright (c) 2010 by Caleb Cushing.
 
 This is free software, licensed under:
 
-  The Artistic License 2.0
+  The Artistic License 2.0 (GPL Compatible)
 
 =cut
 

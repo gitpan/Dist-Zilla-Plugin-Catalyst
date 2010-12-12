@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::Catalyst - set of plugins for working with Catalyst
 
 VERSION
-    version 0.06
+    version 0.07
 
 DESCRIPTION
     The following is a list of plugins in this distribution to help you
@@ -25,5 +25,5 @@ COPYRIGHT AND LICENSE
 
     This is free software, licensed under:
 
-      The Artistic License 2.0
+      The Artistic License 2.0 (GPL Compatible)
 

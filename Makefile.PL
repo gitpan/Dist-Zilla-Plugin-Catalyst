@@ -13,9 +13,11 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Caleb Cushing <xenoterracide@gmail.com>, Tomas Doran <bobtfish@bobtfish.net>',
   'BUILD_REQUIRES' => {
     'Carp' => '0',
+    'Dist::Zilla::Tester' => '0',
     'English' => '0',
     'File::Find' => '0',
     'File::Temp' => '0',
+    'Path::Class' => '0',
     'Scalar::Util' => '0',
     'Test::More' => '0.94',
     'perl' => '5.004'
@@ -34,7 +36,7 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Role::ModuleMaker' => '0',
     'Moose' => '0'
   },
-  'VERSION' => '0.06',
+  'VERSION' => '0.07',
   'test' => {
     'TESTS' => 't/*.t'
   }
