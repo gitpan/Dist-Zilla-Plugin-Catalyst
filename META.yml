@@ -9,14 +9,13 @@ build_requires:
   English: 0
   File::Find: 0
   File::Temp: 0
-  Path::Class: 0
   Scalar::Util: 0
   Test::More: 0.94
   perl: 5.004
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.102346, CPAN::Meta::Converter version 2.102400'
+generated_by: 'Dist::Zilla version 4.200000, CPAN::Meta::Converter version 2.102400'
 license: artistic_2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -31,7 +30,8 @@ requires:
   Dist::Zilla::File::InMemory: 0
   Dist::Zilla::Role::ModuleMaker: 0
   Moose: 0
+  Path::Class: 0
 resources:
   bugtracker: http://github.com/xenoterracide/Dist-Zilla-Plugin-Catalyst/issues
   repository: git://github.com/xenoterracide/Dist-Zilla-Plugin-Catalyst.git
-version: 0.08
+version: 0.09
