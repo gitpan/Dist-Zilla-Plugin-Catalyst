@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Dist::Zilla::Plugin::Catalyst;
 BEGIN {
-	our $VERSION = 0.10;# VERSION
+	our $VERSION = 0.11;# VERSION
 }
 1;
 # ABSTRACT: set of plugins for working with Catalyst
@@ -17,7 +17,13 @@ Dist::Zilla::Plugin::Catalyst - set of plugins for working with Catalyst
 
 =head1 VERSION
 
-version 0.10
+version 0.11
+
+=head1 SYNOPSIS
+
+for quick start
+
+	dzil new -P Catalyst <ProjectName>
 
 =head1 DESCRIPTION
 
@@ -25,6 +31,8 @@ The following is a list of plugins in this distribution to help you integrate
 L<Catalyst> and L<Dist::Zilla>
 
 =over
+
+=item * L<Dist::Zilla::Plugin::MinterProfile::Catalyst> Default Minting profile
 
 =item * L<Dist::Zilla::Plugin::Catalyst::New> Create a new Catalyst Project
 

@@ -6,9 +6,9 @@ use Test::More;
 use Path::Class;
 
 my $tzil = Minter->_new_from_profile(
-	[ Default => 'default' ],
-	{ name => 'CatApp', },
-	{ global_config_root => dir('corpus/mint')->absolute },
+	[ Catalyst => 'default' ],
+	{ name => 'CatalystMinterProfile' },
+	{ global_config_root => dir('corpus/minterprofile')->absolute },
 );
 
 $tzil->mint_dist;
@@ -20,16 +20,16 @@ my $mrs  = $mr->subdir('script');
 my $mrr  = $mr->subdir('root');
 my $mrri = $mr->subdir('root')->subdir('static')->subdir('images');
 
-ok( -e $mr->file('catapp.conf'),      'catapp.conf exists');
-ok( -e $mrl->file('CatApp.pm'), 'CatApp.pm exists');
-ok( -e $mrl->subdir('CatApp')->subdir('Controller')->file('Root.pm'), 'controller exists');
+ok( -e $mr->file('catalystminterprofile.conf'), 'catalystminterprofile.conf exists');
+ok( -e $mrl->file('CatalystMinterProfile.pm'), 'CatalystMinterProfile.pm exists');
+ok( -e $mrl->subdir('CatalystMinterProfile')->subdir('Controller')->file('Root.pm'), 'controller exists');
 
 # test scripts
-ok( -e $mrs->file('catapp_cgi.pl'),     '_cgi.pl exists');
-ok( -e $mrs->file('catapp_create.pl'),  '_create.pl exists');
-ok( -e $mrs->file('catapp_fastcgi.pl'), '_fastcgi.pl exists');
-ok( -e $mrs->file('catapp_server.pl'),  '_server.pl exists');
-ok( -e $mrs->file('catapp_test.pl'),    '_test.pl exists');
+ok( -e $mrs->file('catalystminterprofile_cgi.pl'),     '_cgi.pl exists');
+ok( -e $mrs->file('catalystminterprofile_create.pl'),  '_create.pl exists');
+ok( -e $mrs->file('catalystminterprofile_fastcgi.pl'), '_fastcgi.pl exists');
+ok( -e $mrs->file('catalystminterprofile_server.pl'),  '_server.pl exists');
+ok( -e $mrs->file('catalystminterprofile_test.pl'),    '_test.pl exists');
 
 # test root and images
 ok( -e $mrr->file('favicon.ico'),                    'favicon.ico exists');
@@ -48,37 +48,37 @@ SKIP: {
 	# check that these are not executable ( small sampling of the above files
 	# to make sure it's not over chmoding perms )
 	ok(
-		! -x $mrl->file('CatApp.pm')
-		, 'CatApp.pm is executable'
+		! -x $mrl->file('catalystminterprofile.pm')
+		, 'catalystminterprofile.pm is not executable'
 	);
 	ok(
-		! -x $mrl->subdir('CatApp')->subdir('Controller')->file('Root.pm')
-		, 'controller is executable'
+		! -x $mrl->subdir('catalystminterprofile')->subdir('Controller')->file('Root.pm')
+		, 'controller is not executable'
 	);
 	ok(
-		! -x $mr->file('catapp.conf')
-		, 'catapp.conf is executable'
+		! -x $mr->file('catalystminterprofile.conf')
+		, 'catalystminterprofile.conf is not executable'
 	);
 	# check these are executable
 	ok(
-		-x $mrs->file('catapp_cgi.pl'),
-		'_cgi.pl is not executable'
+		-x $mrs->file('catalystminterprofile_cgi.pl'),
+		'_cgi.pl is executable'
 	);
 	ok(
-		-x $mrs->file('catapp_create.pl')
-		, '_create.pl is not executable'
+		-x $mrs->file('catalystminterprofile_create.pl')
+		, '_create.pl is executable'
 	);
 	ok(
-		-x $mrs->file('catapp_fastcgi.pl'),
-		'_fastcgi.pl is not executable'
+		-x $mrs->file('catalystminterprofile_fastcgi.pl'),
+		'_fastcgi.pl is executable'
 	);
 	ok(
-		-x $mrs->file('catapp_server.pl'),
-		'_server.pl is not executable'
+		-x $mrs->file('catalystminterprofile_server.pl'),
+		'_server.pl is executable'
 	);
 	ok(
-		-x $mrs->file('catapp_server.pl'),
-		'_server.pl is no executable'
+		-x $mrs->file('catalystminterprofile_server.pl'),
+		'_server.pl is executable'
 	);
 }
 done_testing;
