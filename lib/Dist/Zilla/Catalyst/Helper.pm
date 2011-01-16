@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Dist::Zilla::Catalyst::Helper;
 BEGIN {
-	our $VERSION = 0.12;# VERSION
+	our $VERSION = 0.13;# VERSION
 }
 use Moose;
 use Dist::Zilla::File::InMemory;
@@ -25,6 +25,7 @@ sub _mk_readme {};
 sub _mk_apptest {};
 sub _mk_podtest {};
 sub _mk_podcoveragetest {};
+sub mk_dir {};
 
 sub mk_file {
 	my ( $self, $file_obj , $output ) = @_;
@@ -66,7 +67,7 @@ Dist::Zilla::Catalyst::Helper - a subclass of Catalyst::Helper
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 DESCRIPTION
 
