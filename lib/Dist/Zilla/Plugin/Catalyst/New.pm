@@ -1,8 +1,9 @@
 use strict;
 use warnings;
+use 5.006;
 package Dist::Zilla::Plugin::Catalyst::New;
 BEGIN {
-	our $VERSION = 0.13;# VERSION
+	our $VERSION = 0.14;# VERSION
 }
 use Moose;
 use Dist::Zilla::Catalyst::Helper;
@@ -12,10 +13,6 @@ use Dist::Zilla::File::FromCode;
 
 sub make_module {
 	my ( $self ) = @_;
-
-	if ( $Catalyst::Helper::VERSION <= 1.28 ) {
-		$self->log('getting authors from ENV variable AUTHOR not dzil');
-	}
 
 	# format $name to what C::Helper wants
 	my $name = $self->zilla->name;
@@ -49,7 +46,7 @@ Dist::Zilla::Plugin::Catalyst::New - create a new catalyst project with dzil new
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 
